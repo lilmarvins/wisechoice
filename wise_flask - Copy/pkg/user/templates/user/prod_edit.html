@@ -1,0 +1,65 @@
+
+{% include "user/headerlogged.html" %}
+
+<!-- end of nav 2 -->
+
+</div>
+<div class="row  m-3 d-flex justify-content-center" style="height: 100px;"></div>
+
+
+
+
+<div class="row  m-3 d-flex justify-content-center text-center" style="height: 600px;">
+           
+    <div class="col-6 shadow  " id="addproduct">
+        {% set m = get_flashed_messages(with_categories=True)%}
+        {% for cat,msg in m%}
+          {% if cat=='error'%}
+          <div class="alert alert-danger">{{msg}}</div>
+          {%else%}
+          <div class="alert alert-success">{{msg}}</div>
+          {%endif%}
+        {%endfor%}
+
+        <form action=""  method="post"  enctype="multipart/form-data" >
+            <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+
+        <label for="product" style="font-size: 30px; font-family: figtree;">Product Description</label>
+      <textarea name="product" id="product" cols="10" rows="5" class="form-control" placeholder="Product Description"></textarea><br>
+      <input type="text" name="prod_name" id="" placeholder="Product Name" class="form-control"> <br>
+            <input type="number" name="prodamount" id="prodamount" placeholder="product quantity" class="form-control"> <br>
+            <input type="number" name="prodprice" placeholder="product Price" class="form-control"> <br>
+            <input type="file" name="file" id="" class="form-control">
+            <label for="prod_cat"> Product Category</label>
+            <select name="prod_cat" id="" class="form-control">
+                <option value="">Select One...</option>
+                {% for cats in cat %}
+                    <option value="{{cats.cat_id}}">{{cats.cat_name}}</option>
+                {% endfor%}
+            </select> <br>
+
+      <button type="submit"  class="btn btn-primary col-10" id="addprodbtn">Edit Product</button>
+
+
+    </form>
+  
+        </div>
+       
+
+
+
+
+
+
+        
+        
+    </div>
+</div>
+
+{% include "user/footerlogged.html" %}
+
+ <!-- Initialize Swiper -->
+
+
+</body>
+</html>

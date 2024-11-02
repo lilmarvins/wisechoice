@@ -1,0 +1,49 @@
+
+{% extends 'admin_layout.html'%}
+
+               
+{% block content%}
+                <main>
+                   
+
+  <div class="container-fluid px-4">
+                        <h1 class="mt-4">Add Product</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item">Dashboard</li>
+                              <li class="breadcrumb-item active"><a href="">All Topic</a></li>
+                              <li class="breadcrumb-item active">Add Product</li>
+                        </ol>
+                      <div class="row">
+                          <div class="col">
+                         
+                            <form action="" id="productform" method="post"  enctype="multipart/form-data" >
+                                <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+                            <label for="product" style="font-size: 30px; font-family: figtree;">Product Description</label>
+                          <textarea name="product" id="product" cols="10" rows="5" class="form-control" placeholder="Product Description"></textarea><br>
+                          <input type="text" name="prod_name" id="" placeholder="Product Name" class="form-control"> <br>
+                                <input type="number" name="prodamount" id="prodamount" placeholder="product quantity" class="form-control"> <br>
+                                <input type="number" name="prodprice" placeholder="product Price" class="form-control"> <br>
+                                <input type="file" name="file" id="" class="form-control">
+                                <label for="prod_cat"> Product Category</label>
+                                <select name="prod_cat" id="" class="form-control">
+                                    <option value="">Select One...</option>
+                                    {% for cats in cat %}
+                                        <option value="{{cats.cat_id}}">{{cats.cat_name}}</option>
+                                    {% endfor%}
+                                </select> <br>
+                    
+                          <button type="submit"  class="btn btn-primary col-10" id="addprodbtn">Upload Product</button>
+                    
+                    
+                        </form>
+                      
+
+
+                          </div>
+                      </div>
+                        
+                    </div>
+
+
+                </main>              
+{% endblock content%}

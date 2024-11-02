@@ -1,0 +1,538 @@
+
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animate.min.css">
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Terms And Condition</title>
+
+    <style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+  .butn{
+    background-color: hsl(47, 98%, 52%);
+        };
+    .boxs{
+      height: 70px !important;
+      
+    }
+    .bag:hover{
+      border: 3px solid white;
+      cursor: pointer;
+    }
+    
+    .wrapper{
+		 		min-height: 200px;
+		 		display: flex;
+		 	}
+		 
+		 	.wrapper .item{
+		 		width:400px !important;
+		 		height: 400px;
+		 		line-height: 50px;
+		 		text-align: center;
+		 		background-color: whitesmoke;
+      }
+		 	.wrapper .item:hover{
+		 		
+         box-shadow: 2px 2px  7px gray, 2px 2px  6px lightblue ;
+
+		cursor: pointer;
+      }
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+     
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .slide-parent {
+      
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      margin: 0;
+      background-color: hsl(47, 98%, 52%);;
+    }
+    .slides:hover{
+      box-shadow: 2px 2px 6px 2px rgba(0,0,0,0.7) ;
+      cursor: pointer;
+      
+    }
+
+    .slides {
+     
+      font-size: 14px;
+      background: #fff;
+      min-height: 300px;
+      margin: 5px;
+      width: 200px !important;
+      padding: 5px;
+      border-radius: 20px !important;
+    }
+
+    @media  screen and (max-width: 746px) {
+      .swiper-button-next {
+        right: 20px;
+        transform: rotate(90deg);
+
+      }
+
+      .swiper-button-prev {
+        left: 20px;
+        transform: rotate(90deg);
+      }
+      p{
+        font-size: 10px;
+      }
+      .boxs button {
+        height: 30px;
+        font-size: 3px !important;
+      }
+      .butresp {
+        margin-right: 5px;
+        width: 90% !important;
+        height: 30px !important;
+      }
+      .butresp span{
+        margin-top: 20px !important;
+        font-size: 2px !important;
+      }
+      .butresp p{
+        font-size: 5px !important;
+        margin-top: -20px !important;
+      }
+      .butresp img{
+        margin-left: -10px !important;
+        width: 15px !important;
+        height: 15px !important;
+      }
+    }
+
+
+   
+    img{
+      width: 100%;
+      
+    }
+    .slide-parent img{
+      width: 100%;
+      height: 150px;
+      
+    }
+    .slides p{
+      margin: 0;
+    }
+    .navhov:hover{
+     background-color:black;
+    }
+    .boxs{
+      background-color: whitesmoke;
+      border-radius: 20px;
+      box-shadow: 2px 2px 6px 2px rgba(0,0,0,0.7) ;
+    }
+    .boxs img{
+      border-radius: 20px;
+    }
+    .swiper1 {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide2 {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide2 img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+   /* <uniquifier>: Use a unique and descriptive class name
+ <weight>: Use a value from 100 to 900 */
+
+  .wise {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+}
+.stick{
+  position: fixed;
+  position: -webkit-sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  
+}
+
+footer {
+    
+  min-height: 150px;
+  color: whitesmoke;
+}
+
+.footer img{
+  padding: -50px;
+}
+.burger{
+  min-height: 30px;
+ 
+  /* position: fixed;
+  position: -webkit-sticky;
+ 
+  width: 100%;
+  z-index: 1200;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px; */
+}
+form{
+  height: 40px;
+}
+.line{
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  margin: 6px auto;
+  margin-left: -5px;
+}
+.nav2{
+  display: none;
+  margin-left: -25px;
+}
+@media  screen and (max-width:767px) {
+  .nav2{
+    display: block;
+    height: ;
+    width: 100% auto;
+  }
+  .wise{
+    font-size: large;
+  }
+  .nav1{
+    display: none;
+  }
+  .apple{
+    font-size: 9px;
+  }
+}
+.search{
+  margin-right: -50px;
+}
+.apple{
+  margin: 0%;
+}
+
+    </style>
+</head>
+<body>
+   
+<div class="container-fluid">
+  <div class="row  stick bg-warning nav1">
+    <div class="col d-flex m-3 ">
+      
+      <button style="height: 40px; width: 45px;"  class="btn btn-outline-dark " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+<div class="offcanvas-header">
+  <h5 class="offcanvas-title ms-4 me-3 wise" id="offcanvasWithBothOptionsLabel" style="width: 230px;" >Wise <Span class="text-danger">Choice</Span></h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas-body">
+  <h4>Categories</h4>
+  <p>Women Fashion</p>
+  <p>Men Fashion</p>
+  <p>Children</p>
+  <p>Phone & Tablets</p>
+  <p>Appliances</p>
+  <p>electronics</p>
+
+
+
+</div>
+</div>
+
+
+      <h1 style="width: 230px;;" class=" text-white ms-4 me-3 wise">Wise <Span class="text-danger">Choice</Span> </h1>
+
+      <form class="d-flex col-sm-3 col-md-5 " role="search">
+        <input class="form-control  " type="search" placeholder="Search products, brands and categories" aria-label="Search" >
+        <button class="btn btn-outline-dark text-white butn ms-2 navhov" type="submit">Search</button>
+      </form>
+
+      <a class="nav-link  ms-4 mt-2 active text-white navhov" aria-current="page" href="index.html">Home</a>
+     
+      <div class="dropdown navhov  ms-4 mt-2">
+        <a class=" nav-link text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Account
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="login.html"><button class="btn btn-outline-warning">signup or login</button</a></li>
+           
+
+          <li><a class="dropdown-item" href="login.html"><i class="fa-solid fa-store fa-flip"></i> Orders</a></li>
+          <li><hr class="dropdown-divider text-dark"></li>
+          <li><a class="dropdown-item" href="login.html"><i class="fa-regular fa-heart fa-beat-fade"></i> Saved Items</a></li>
+          <li><hr class="dropdown-divider text-dark"></li>
+ 
+          <li><a class="dropdown-item" href="login.html"><i class="fa-solid fa-gear fa-spin-pulse"></i> Settings</a></li>
+        </ul>
+      </div>
+      <a class="  ms-4 mt-2 nav-link  color-white navhov "  href="login.html"><span class="text-white ms-2 "><i class="fa-solid fa-cart-shopping fa-bounce"></i> Cart </span> <span id="cart" class="text-white"> </span></a>
+
+    </div>
+  </div>
+
+    <!-- begin of nav2 -->
+
+
+  <div class="row  stick bg-warning nav2">
+    <div class="col d-flex m-3">
+      
+      <button style="height: 40px; width: 45px;"  class="btn btn-outline-dark " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+<div class="offcanvas-header">
+  <h5 class="offcanvas-title ms-4 me-3 wise" id="offcanvasWithBothOptionsLabel" style="width: 230px;" >Wise<Span class="text-danger">Choice</Span></h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas-body">
+  <h4>Categories</h4>
+  <p>Women Fashion</p>
+  <p>Men Fashion</p>
+  <p>Children</p>
+  <p>Phone & Tablets</p>
+  <p>Appliances</p>
+  <p>electronics</p>
+
+
+
+</div>
+</div>
+
+
+      <h1 style="width: 230px;;" class=" text-white ms-2 me-3 wise">Wise <Span class="text-danger">Choice</Span></h1>
+
+      <form class="d-flex col-4 " role="search">
+        <input class="form-control search " type="search" placeholder="Search" aria-label="Search" >
+        <button class="btn btn-outline-dark text-white butn ms-2 navhov col-4 " type="submit"><img src="search-interface-symbol.png" alt="" style="width: 25px; height: 25px;"></button>
+      </form>
+
+      <a class="nav-link  ms-2 mt-2 active text-white navhov" aria-current="page" href="index.html"><img src="home.png" alt="picture of home" style="width: 30px; height: 30px;"></a>
+      
+      <div class="dropdown navhov  ms-2 mt-2">
+        <a class=" nav-link text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="profile.png" alt="picture of profile" style="width: 30px; height: 30px;">
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="login.html"><button class="btn btn-outline-warning">signup or login</button</a></li>
+           
+          <li><a class="dropdown-item" href="my_products.html">My Products</a></li>
+          <li><hr class="dropdown-divider text-dark"></li>
+          <li><a class="dropdown-item" href="order.html">Orders</a></li>
+          <li><hr class="dropdown-divider text-dark"></li>
+          <li><a class="dropdown-item" href="saveditems.html">Saved Items</a></li>
+          <li><hr class="dropdown-divider text-dark"></li>
+          <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+        </ul>
+      </div>
+      <a class="  me-5  mt-2 nav-link  color-white navhov "  href="cart.html"><i class="fa-solid fa-cart-shopping fa-bounce"></i> <span class="text-white ms-2 "></span> <span id="cart" class="text-white"> </span></a>
+
+    </div>
+  </div>
+
+
+<!-- end of nav 2 -->
+</div>
+<div class="row  m-3 d-flex justify-content-center" style="height: 100px;"></div>
+
+
+
+
+<div class="row  m-3 d-flex justify-content-center" style="min-height: 600px;">
+  <div class="col-10 shadow"> 
+           <h1 class="wise">TERMS AND CONDITIONS </h1>
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Archit
+   ecto commodi iusto, veritatis recusandae quae magnam ab voluptate
+    ipsam id dicta fuga tenetur, cumque eaque volupt
+   atem earum. Vel expedita doloremque molestias.
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Archit
+   ecto commodi iusto, veritatis recusandae quae magnam ab voluptate
+    ipsam id dicta fuga tenetur, cumque eaque volupt
+   atem earum. Vel expedita doloremque molestias.
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Archit
+   ecto commodi iusto, veritatis recusandae quae magnam ab voluptate
+    ipsam id dicta fuga tenetur, cumque eaque volupt
+   atem earum. Vel expedita doloremque molestias.
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Archit
+   ecto commodi iusto, veritatis recusandae quae magnam ab voluptate
+    ipsam id dicta fuga tenetur, cumque eaque volupt
+   atem earum. Vel expedita doloremque molestias.
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Archit
+   ecto commodi iusto, veritatis recusandae quae magnam ab voluptate
+    ipsam id dicta fuga tenetur, cumque eaque volupt
+   atem earum. Vel expedita doloremque molestias.
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Archit
+   ecto commodi iusto, veritatis recusandae quae magnam ab voluptate
+    ipsam id dicta fuga tenetur, cumque eaque volupt
+   atem earum. Vel expedita doloremque molestias.
+   v   Lorem ipsum dolor sit amet consectetur adipisicing elit. Archit
+   ecto commodi iusto, veritatis recusandae quae magnam ab voluptate
+    ipsam id dicta fuga tenetur, cumque eaque volupt
+   atem earum. Vel expedita doloremque molestias.
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Archit
+   ecto commodi iusto, veritatis recusandae quae magnam ab voluptate
+    ipsam id dicta fuga tenetur, cumque eaque volupt
+   atem earum. Vel expedita doloremque molestias.
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Archit
+   ecto commodi iusto, veritatis recusandae quae magnam ab voluptate
+    ipsam id dicta fuga tenetur, cumque eaque volupt
+   atem earum. Vel expedita doloremque molestias.
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Archit
+   ecto commodi iusto, veritatis recusandae quae magnam ab voluptate
+    ipsam id dicta fuga tenetur, cumque eaque volupt
+   atem earum. Vel expedita doloremque molestias.
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Archit
+   ecto commodi iusto, veritatis recusandae quae magnam ab voluptate
+    ipsam id dicta fuga tenetur, cumque eaque volupt
+   atem earum. Vel expedita doloremque molestias. 
+  </div>
+        </div>
+       
+        
+    </div>
+</div>
+
+
+
+<footer class="container-fluid">
+  <div class="row bg-warning p-5 d-flex justify-content-center">
+    <div class="col-4">
+      <h1 class="text-white m-2 me-5 wise">Wise <Span class="text-danger">Choice</Span></h1>
+      <a class="text-white nav-link" href="">About Us</a>
+      <a class="text-white nav-link" href="login.html">Login Here</a>
+      <a href="terms.html" class="nav-link "> terms and condition </a>
+    </div>
+    <div class="col-4">
+      <h6 class="">New to Wise Choice?</h6>
+      <p>subscribe to our news letter to get updates on our latest offers!</p>
+        <form action="" method="get">
+      <input type="email" name="email" id="" class=" form-control " placeholder="Enter Email Address">
+      <input type="radio" name="gender" id="" >
+      <label for="male">Male</label>
+  
+      <input type="radio" name="gender" id="" class="text-warning">
+      <label for="female">Female</label>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    <div class="col-4">
+      <h6>DOWNLOAD <h1 class="text-white wise">Wise<Span class="text-danger">Choice</Span></h1> FREE APP</h6>
+      <P>GET ACCESS TO EXCLUSIVE FREE APPS</P>
+
+
+      <div class="d-flex ">
+<div class="col d-flex">
+            <!-- apple -->
+            <div class="col">
+      <a href="https://www.apple.com/app-store/" class="btn  border-dark d-flex butresp" style="width: 135px;  height: 55px;">
+      <img src="apple.png" alt="" style="width: 30px; height: 35px;">
+      <div class=" " >
+        
+        <span  style="  font-size: 10px;">Download on the </span>
+      
+      <p  style=" margin-top: -8px; " class="">App store</p>
+    </div>
+  </a>
+</div>
+        <!-- playstore -->
+        <div class="col" style="margin-left: -20px ;">
+      <a href="https://play.google.com/store/games?device=windows&pli=1" class="btn  border-dark d-flex ms-4 butresp" style="width: 135px;  height: 55px;">
+        <img src="playstore.png" alt="" style="width: 30px; height: 35px;">
+        <div class=" " >
+          
+          <span  style="  font-size: 10px;">Download on the </span>
+        
+        <p  style=" margin-top: -8px; " class="">App store</p>
+      </div>
+    </a>
+    </div>
+
+  </div>
+
+
+
+    </div>
+  </div>
+  </div>
+  
+
+  <div class="row bg-dark " style="height: 100px;">
+    <div class="col ms-3">
+      <h5 class="text-white ">JOIN US ON</h5>
+      <img src="facebook-app-symbol.png" alt=""  style="width: 30px; height: 30px;" >
+      <img src="instagram (1).png" alt=""   style="width: 30px; height: 30px;" class="ps-3">
+      <img src="twitter (1).png" alt=""  style="width: 30px; height: 30px;" class="ps-3">
+      <img src="youtube.png" alt=""  style="width: 30px; height: 30px;" class="ps-3">
+    </div>
+    <div class="bg-warning" style="height: 1px;"></div>
+  <p class="text-center"> copyright &copy wise choice 2024</p>
+  </div>
+ 
+</footer>
+<script src="swiper-bundle.min.js"></script>
+<script src="bootstrap/js/bootstrap.bundle.js" type="text/javascript"></script>
+    <script src="jquery.js"></script>
+<script src="script.js"></script>
+ <!-- Initialize Swiper -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,68 @@
+{% extends 'admin_layout.html'%} {% block content%}
+<main>
+  <div class="container-fluid px-4">
+    <h1 class="mt-4">Add Category</h1>
+    <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item">Dashboard</li>
+      <li class="breadcrumb-item active"><a href="">All Categories</a></li>
+      <li class="breadcrumb-item active">Add Category</li>
+    </ol>
+    <div class="row">
+      <div class="col">
+        <form action="" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="csrf_token" value="{{csrf_token()}}" />
+          <label for="prod_cat" style="font-size: 30px; font-family: figtree"
+            >Add Category</label
+          >
+          <input type="file" name="catimg" id="" class="form-control" required>
+          <input
+            type="text"
+            name="prod_cat"
+            id=""
+            placeholder="Category Name"
+            class="form-control"
+          required/>
+          <br />
+
+          <button type="submit" class="btn btn-primary col-10" id="addprodbtn">
+            Add Category
+          </button>
+        </form>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>S/N</th>
+              <th>Category Image</th>
+              <th>Category Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for cats in cat %}
+            <tr>
+              <td>{{loop.index}}</td>
+              <td> <img src="/static/images/{{cats.cat_image}}" alt="" class="" style="width: 60px;"> </td>
+              <td>{{cats.cat_name}}</td>
+              <td>
+                <a
+                  href="/admin/deletecat/{{cats.cat_id}}/"
+                  class="btn btn-danger"
+                  onclick="return confirm('Do you really want to delete this product')"
+                  >Delete Category</a
+                >
+                <a
+                  href="/admin/catedit/{{cats.cat_id}}/"
+                  class="btn btn-warning"
+                  >Edit Category</a
+                >
+              </td>
+            </tr>
+            {% endfor%}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock content%}

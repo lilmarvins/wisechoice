@@ -1,0 +1,59 @@
+{% extends "admin_layout.html"%}
+
+{% block content%}
+
+<div class="content" style="background-color: white;padding:3em">
+    <h3>Edit Your Profile</h3>
+    <form action="/admin/adminsetting/" method="post">
+     <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+   <div class="form-group row">
+    <div class="col-md-6 mb-3">
+
+      {% set m = get_flashed_messages(with_categories=True)%}
+      {% for cat,msg in m%}
+        {% if cat=='error'%}
+        <div class="alert alert-danger">{{msg}}</div>
+        {%else%}
+        <div class="alert alert-success">{{msg}}</div>
+        {%endif%}
+      {%endfor%}
+        <label for="fname">Username</label>
+        <input class="form-control border-dark noround" id="fname" name="username" required type="text" value="{{admin.admin_username}}" >
+    
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="lname">Email</label>
+        <input class="form-control border-dark noround" id="lname" name="admin_email" required type="email" value="{{admin.admin_email}}" >
+    
+    </div>
+   </div>
+   <div class="form-group row">
+    <div class="col-md-6 mb-3">
+        <label for="phone">Password</label>
+        <input class="form-control border-dark noround" id="phone" name="admin_password" required type="password"value='' >
+    
+    </div>
+    <div class="col-md-6 mb-3">
+     
+    
+    </div>
+
+   </div>
+   <hr>
+
+   
+    <div class="mb-3"> 
+      <input class="btn custom-btn btn-warning noround" id="btnsubmit" name="btnsubmit" type="submit" value="Update Profile!">
+      
+    </div>
+   
+    </form>
+ </div>
+
+  {% endblock content%}
+
+
+<!-- end more content-->
+
+
+

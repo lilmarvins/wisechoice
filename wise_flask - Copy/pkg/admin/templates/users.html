@@ -1,0 +1,49 @@
+{% extends "admin_layout.html"%}
+{% block content%}
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">All User Accounts</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">User Accounts</li>
+                        </ol>
+                       
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                               Registered Accounts
+                            </div>
+                            <div class="card-body">
+     <table class="table table-striped">
+  <thead>
+    <tr>
+        <th>S/N</th>
+        <th>Users Name </th>
+        <th>Users Email</th>
+        <th>Users State</th>
+        <th>Users Address</th>
+        <th>Users Phone Number</th>
+        <th>Delete User</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for users in Duser%}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{users.username}}</td>
+        <td>{{users.email}}</td>
+        <td>{{users.state}}</td>
+        <td>{{users.address}}</td>
+        <td>{{users.phone_number}}</td>
+        <td><a href="/admin/deleteuser/{{users.user_id}}" class="btn btn-danger" onclick="return confirm('Do you really want to delete this product')">Delete User</a></td>
+    </tr>
+    {%endfor%}
+   
+  </tbody>
+</table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+              
+                {% endblock content%}

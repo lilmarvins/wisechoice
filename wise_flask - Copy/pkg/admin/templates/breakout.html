@@ -1,0 +1,51 @@
+
+{% extends 'admin_layout.html'%}
+
+               
+               {% block content%}
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">All Products Available</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Products</li>
+                        </ol>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                             
+                               &nbsp;&nbsp; <a href="/admin/addprod/" class="btn btn-outline-primary">Add Product</a>
+                               <a href="/admin/addcategory/" class="btn btn-outline-primary">Add Categories</a>
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                               Products Available
+                            </div>
+                            <div class="card-body">
+                               <table class="table">
+  <thead>
+    <th>Sellers Name</th>
+    <th>Product Name</th>
+    
+  </thead>
+  <tbody>
+
+    {% for product in products%}
+    <tr>
+        <td>{{product.seller_user.username}}</td>
+      <td>{{product.prod_name}}</td>
+      
+      <td><img src="/static/images/{{product.prod_image}}" height="40"></td>
+      <td>  <a href="/admin/deleteprod/{{product.prod_id}}" class="btn btn-sm btn-danger" onclick="return confirm('Do you really want to delete this product')">Delete</a> </td>
+    </tr>
+{%endfor%}
+  </tbody>
+</table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                {% endblock content%}
+                
+               

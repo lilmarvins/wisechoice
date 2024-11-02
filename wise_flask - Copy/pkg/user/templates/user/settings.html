@@ -1,0 +1,94 @@
+{% include "user/headerlogged.html" %}
+
+  
+  <!-- end of nav 2 -->
+</div>
+<div class="row  m-3 d-flex justify-content-center" style="height: 100px;"></div>
+
+
+
+
+<div class="row   m-3 " style="min-height: 600px;">
+ {%include 'user/settingsside.html'%}
+           
+    <div class="col-8 shadow  rounded device">
+        <h1 class="wise text-center"><i class="fa-solid fa-gear fa-spin-pulse"></i> Settings</h1><br>
+        <div class="row">
+    {% set m = get_flashed_messages(with_categories=True)%}
+    {% for cat,msg in m%}
+      {% if cat=='error'%}
+      <div class="alert alert-danger">{{msg}}</div>
+      {%else%}
+      <div class="alert alert-success">{{msg}}</div>
+      {%endif%}
+    {%endfor%}
+
+                    <div class="col-5 m-3 shadow " >
+                        <div class="col m-3 text-center"  style="border-bottom: 1px solid grey;">
+                            <h4>Account Details</h4>
+                        </div>
+                        
+                        
+                        <div class="col">
+                            <h5>{{userdets.username}}</h5>
+                            <p>{{userdets.email}}</p>
+                        </div>
+                    </div>
+                    <div class="col-6 m-3 shadow">
+                        <div class="col m-3 text-center"  style="border-bottom: 1px solid grey;">
+                            <h4>Address Book <a href="{{url_for('bpuser.address')}}"><i class="fa-solid fa-pen-to-square"></i></a></h4>
+                        </div>
+                        
+                        <div class="col">
+                            <h5>Your default shipping address:</h5>
+                            <p>{{userdets.username}} </p>
+
+                           <p>{{userdets.address}}</p> 
+                            
+                            <p> {{userdets.city}}</p>  
+                            
+                            <p> {{userdets.phone_number}}</p>
+                        </div>
+                    </div>
+                    <div class="col-5 m-3 shadow">
+                        <div class="col m-3 text-center"  style="border-bottom: 1px solid grey;">
+                            <h4>Wise Choice Store credit</h4>
+                        </div>
+                        
+                        <div class="col" style="height: 130px;">
+                            <h5><i class="fa-solid fa-wallet"></i> Wise Choice credit balance:₦ 0                            </h5>
+                            
+                        </div>
+                      
+                    </div>
+
+
+                    <div class="col-6 m-3 shadow">
+                        <div class="col m-3 text-center"  style="border-bottom: 1px solid grey;">
+                            <h4>Wise Choice Subscriptions</h4>
+                        </div>
+                        
+                        <div class="col" style="height: 130px;">
+                            <h5><i class="fa-solid fa-wallet"></i> Wise Choice Subscriptiont balance:₦ 0                            </h5>
+                            
+                        </div>
+                      
+                    </div>
+
+                    
+              </div>
+            </div>
+           
+
+        </div>
+       
+        
+    </div>
+</div>
+
+{% include "user/footerlogged.html" %}
+
+
+ <!-- Initialize Swiper -->
+</body>
+</html>

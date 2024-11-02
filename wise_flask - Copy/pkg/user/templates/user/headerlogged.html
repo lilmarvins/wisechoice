@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="{{url_for('bpuser.static',filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('bpuser.static', filename='animate.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('bpuser.static',filename= 'swiper-bundle.min.css')}}">
+    <link href="{{url_for('bpuser.static',filename='bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" sizes="32x32" href="/home/static/images/favicon-32x32.png">
+  
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Wise Choice</title>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+
+
+@media screen and (max-width: 1183px){
+    .boxs{
+    
+      margin-right: 30px  !important;
+    }
+    .boxs1{
+    
+      margin-right: 30px  !important;
+    }
+  
+
+  }
+
+
+
+
+
+
+  .butn{
+    background-color: hsl(47, 98%, 52%);
+        };
+    .boxs{
+      height: 70px !important;
+      
+    }
+    .bag:hover{
+      border: 3px solid white;
+      cursor: pointer;
+    }
+    
+    .wrapper{
+		 		min-height: 200px;
+		 		display: flex;
+		 	}
+		 
+		 	.wrapper .item{
+		 		width:400px !important;
+		 		height: 400px;
+		 		line-height: 50px;
+		 		text-align: center;
+		 		background-color: whitesmoke;
+      }
+		 	.wrapper .item:hover{
+		 		
+         box-shadow: 2px 2px  7px gray, 2px 2px  6px lightblue ;
+
+		cursor: pointer;
+      }
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+     
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .slide-parent {
+      
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      margin: 0;
+      background-color: hsl(47, 98%, 52%);;
+    }
+    .slides:hover{
+      box-shadow: 2px 2px 6px 2px rgba(0,0,0,0.7) ;
+      cursor: pointer;
+      
+    }
+
+    .slides {
+     
+      font-size: 14px;
+      background: #fff;
+      min-height: 300px;
+      margin: 5px;
+      width: 200px !important;
+      padding: 5px;
+      border-radius: 20px !important;
+    }
+
+    @media  screen and (max-width: 746px) {
+      .swiper-button-next {
+        right: 20px;
+        transform: rotate(90deg);
+
+      }
+
+      .swiper-button-prev {
+        left: 20px;
+        transform: rotate(90deg);
+      }
+      p{
+        font-size: 10px;
+      }
+      .boxs button {
+        height: 30px;
+        font-size: 3px !important;
+      }
+      .butresp {
+        margin-right: 5px;
+        width: 90% !important;
+        height: 30px !important;
+      }
+      .butresp span{
+        margin-top: 20px !important;
+        font-size: 2px !important;
+      }
+      .butresp p{
+       
+        margin-top: -20px !important;
+      }
+      .butresp img{
+        margin-left: -10px !important;
+        width: 15px !important;
+        height: 15px !important;
+      }
+    }
+
+
+   
+    img{
+      width: 100%;
+      
+    }
+    .slide-parent img{
+      width: 100%;
+      height: 150px;
+      
+    }
+    .slides p{
+      margin: 0;
+    }
+    .navhov:hover{
+     background-color:black;
+    }
+    .boxs{
+      background-color: whitesmoke;
+      border-radius: 20px;
+      box-shadow: 2px 2px 6px 2px rgba(0,0,0,0.7) ;
+    }
+    .boxs img{
+      border-radius: 20px;
+    }
+    .swiper1 {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide2 {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide2 img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+   /* <uniquifier>: Use a unique and descriptive class name
+ <weight>: Use a value from 100 to 900 */
+
+  .wise {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+}
+.stick{
+  position: fixed;
+  position: -webkit-sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  
+}
+
+footer {
+    
+  min-height: 150px;
+  color: whitesmoke;
+}
+
+.footer img{
+  padding: -50px;
+}
+.burger{
+  min-height: 30px;
+ 
+  /* position: fixed;
+  position: -webkit-sticky;
+ 
+  width: 100%;
+  z-index: 1200;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px; */
+}
+form{
+  height: 40px;
+}
+.line{
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  margin: 6px auto;
+  margin-left: -5px;
+}
+.nav2{
+  display: none;
+  margin-left: -25px;
+}
+.nav3{
+  display: none;
+}
+@media  screen and (max-width:767px) {
+  .nav2{
+    display: block;
+    width: 100% auto;
+  }
+  .wise{
+    font-size: large;
+  }
+  .nav1{
+    display: none;
+  }
+  .apple{
+    font-size: 9px;
+  }
+}
+
+
+.smalld p{
+  font-size: xx-large;
+    }
+
+
+
+
+
+@media  screen and (max-width:800px)and (min-width:777px) {
+  .nav1{
+    display: none;
+  }
+  .nav2{
+      display: none;
+  }
+
+
+  .nav3{
+    display: block;
+  }
+}
+
+
+
+.search{
+  margin-right: -50px;
+}
+.apple{
+  margin: 0%;
+}
+.ordersettings:hover{
+  background-color: gray;
+}
+.ordersettings{
+  min-height: 50px;
+  padding-top: 17px;
+  cursor: pointer;
+}
+
+@media  (max-width:800px) {
+  .device{
+    width: 100%;
+  }
+
+  .increasewidth{
+  
+   
+    display: none;
+    
+    
+  }
+ 
+}
+.update{
+  cursor: pointer;
+}
+
+
+</style>
+
+
+
+  </head>
+<body>
+    
+
+<div class="container-fluid">
+  <!-- begin of nav1 -->
+  
+    <div class="row  stick bg-warning nav1 ps-5 ">
+      <div class="col d-flex m-3 ">
+        
+        <button style="height: 40px; width: 45px;"  class="btn btn-outline-dark " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title ms-4 me-3 wise" id="offcanvasWithBothOptionsLabel" style="width: 230px;" >Wise <Span class="text-danger">Choice</Span></h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    {%for catigs in catig%}
+    <h4> <a href="#category" class="nav-link">{{catigs.cat_name}}</a></h4>
+    
+    {%endfor%}
+  </div>
+</div>
+
+
+        <h1 style="width: 230px;;" class=" text-white ms-4 me-3 wise">Wise <Span class="text-danger">Choice</Span> </h1>
+
+        <form class="d-flex col-sm-3 col-md-5 " role="search">
+          <input type="hidden" name="csrf_token" id="">
+          <input class="form-control  " type="search" placeholder="Search products, brands and categories" aria-label="Search" >
+          <button class="btn btn-outline-dark text-white butn ms-2 navhov" type="submit">Search</button>
+        </form>
+
+        <a class="nav-link  ms-4 mt-2 active text-white navhov" aria-current="page" href="{{url_for('bpuser.home')}}">Home</a>
+       
+        <div class="dropdown navhov  ms-4 mt-2">
+          <a class=" nav-link text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{userdets.username}} Account
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{url_for('bpuser.logout')}}"><button class="btn btn-outline-warning col-12"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button</a></li>
+             
+                <li><a class="dropdown-item" href="{{url_for('bpuser.my_products')}}"><i class="fa-solid fa-shop fa-flip"></i> My Products</a></li>
+                <li><hr class="dropdown-divider text-dark"></li>
+                <li><a class="dropdown-item" href="{{url_for('bpuser.orders')}}"><i class="fa-solid fa-store fa-flip"></i> Orders</a></li>
+                <li><hr class="dropdown-divider text-dark"></li>
+                <li><a class="dropdown-item" href=""><i class="fa-regular fa-heart fa-beat-fade"></i> Saved Items</a></li>
+                <li><hr class="dropdown-divider text-dark"></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-bell fa-shake"></i> Notifications</a></li>
+                <li><hr class="dropdown-divider text-dark"></li>
+                <li><a class="dropdown-item" href="{{url_for('bpuser.settings')}}"><i class="fa-solid fa-gear fa-spin-pulse"></i> Settings</a></li>
+              </ul>
+
+        </div>
+        <a class="ms-4 mt-2 nav-link  color-white navhov  " tabindex="-1"  href="/home/cart/" ><i class="fa-solid fa-cart-shopping fa-bounce"></i> Cart({{session['Shoppingcart']|length}}) </a>
+
+
+      </div>
+    </div>
+<!-- end of nav1 -->
+
+
+
+    <!-- begin of nav3 -->
+
+
+    <div class="row  stick bg-warning nav3">
+      <div class="col d-flex m-3 ">
+        
+       
+
+
+
+
+        <h1 style="width: 230px;;" class=" text-white ms-4 me-3 wise">Wi <Span class="text-danger">Choice</Span> </h1>
+
+        <form class="d-flex col-sm-3 col-md-5 " role="search">
+          <input class="form-control  " type="search" placeholder="Search products, brands and categories" aria-label="Search" >
+          <button class="btn btn-outline-dark text-white butn ms-2 navhov" type="submit">Search</button>
+        </form>
+
+        <a class="nav-link  ms-4 mt-2 active text-white navhov" aria-current="page" href="{{url_for('bpuser.home')}}">Home</a>
+       
+        <div class="dropdown navhov  ms-4 mt-2">
+          <a class=" nav-link text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{userdets.username}} Account
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{url_for('bpuser.logout')}}"><button class="btn btn-outline-warning col-12"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button></a></li>
+             
+                <li><a class="dropdown-item" href="{{url_for('bpuser.my_products')}}"><i class="fa-solid fa-shop fa-flip"></i> My Products</a></li>
+                <li><hr class="dropdown-divider text-dark"></li>
+                <li><a class="dropdown-item" href="{{url_for('bpuser.orders')}}"><i class="fa-solid fa-store fa-flip"></i> Orders</a></li>
+                <li><hr class="dropdown-divider text-dark"></li>
+                <li><a class="dropdown-item" href=""><i class="fa-regular fa-heart fa-beat-fade"></i> Saved Items</a></li>
+                <li><hr class="dropdown-divider text-dark"></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-bell fa-shake"></i> Notifications</a></li>
+                <li><hr class="dropdown-divider text-dark"></li>
+                <li><a class="dropdown-item" href="{{url_for('bpuser.settingssmall')}}"><i class="fa-solid fa-gear fa-spin-pulse"></i> Settings</a></li>
+              </ul>
+        </div>
+        <a class="ms-4 mt-2 nav-link  color-white navhov  " tabindex="-1"  href="/home/cart/" ><i class="fa-solid fa-cart-shopping fa-bounce"></i> Cart({{session['Shoppingcart']|length}}) </a>
+
+      </div>
+    </div>
+
+
+    <!-- end of nav3 -->
+
+
+
+
+
+
+
+
+
+      <!-- begin of nav2 -->
+
+
+    <div class="row  stick bg-warning nav2">
+      <div class="col d-flex m-3">
+        
+       
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWi" aria-labelledby="offcanvasWithBot">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title ms-4 me-3 wise" id="offcanvasWi" style="width: 230px;" >Wise<Span class="text-danger">Choice</Span></h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcan" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    {%for catigs in catig%}
+    <h4> <a href="#category" class="nav-link">{{catigs.cat_name}}</a></h4>
+    
+    {%endfor%}
+
+  </div>
+</div>
+
+
+        <h1 style="width: 230px;;" class=" text-white ms-2 me-3 wise">Wise <Span class="text-danger">Choice</Span></h1>
+
+        <form class="d-flex col-4 " role="search">
+          <input class="form-control search " type="search" placeholder="Search" aria-label="Search" >
+          <button class="btn btn-outline-dark text-white butn ms-2 navhov col-4 " type="submit"><img src="/home/static/images/search-interface-symbol.png" alt="" style="width: 25px; height: 25px;"></button>
+        </form>
+
+        <a class="nav-link  ms-2 mt-2 active text-white navhov" aria-current="page" href="{{url_for('bpuser.home')}}"><img src="/home/static/images/home.png" alt="picture of home" style="width: 30px; height: 30px;"></a>
+        
+        <div class="dropdown navhov  ms-2 mt-2">
+          <a class=" nav-link text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="/home/static/images/profile.png" alt="picture of profile" style="width: 30px; height: 30px;">
+          </a>
+          <ul class="dropdown-menu">
+   <li><a class="dropdown-item" href="{{url_for('bpuser.login')}}"><button class="btn btn-outline-warning col-12"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button</a></li>
+             
+    <li><a class="dropdown-item" href="{{url_for('bpuser.my_products')}}"><i class="fa-solid fa-shop fa-flip"></i> My Products</a></li>
+    <li><hr class="dropdown-divider text-dark"></li>
+    <li><a class="dropdown-item" href="{{url_for('bpuser.orders')}}"><i class="fa-solid fa-store fa-flip"></i> Orders</a></li>
+    <li><hr class="dropdown-divider text-dark"></li>
+    <li><a class="dropdown-item" href=""><i class="fa-regular fa-heart fa-beat-fade"></i> Saved Items</a></li>
+    <li><hr class="dropdown-divider text-dark"></li>
+    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-bell fa-shake"></i> Notifications</a></li>
+    <li><hr class="dropdown-divider text-dark"></li>
+    <li><a class="dropdown-item" href="{{url_for('bpuser.settingssmall')}}"><i class="fa-solid fa-gear fa-spin-pulse"></i> Settings</a></li>
+    </ul>
+          
+        </div>
+        <a class="ms-4 mt-2 nav-link  color-white navhov  " tabindex="-1"  href="/home/cart/" ><i class="fa-solid fa-cart-shopping fa-bounce"></i> Cart({{session['Shoppingcart']|length}}) </a>
+
+      </div>
+    </div>
+

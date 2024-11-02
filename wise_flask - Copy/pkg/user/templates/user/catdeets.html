@@ -1,0 +1,38 @@
+{% if 'useronline' in session %}
+
+{% include "user/headerlogged.html" %}
+
+{%else%}
+{% include "user/header.html" %}
+{%endif%}
+
+
+
+
+<div style="height: 130px;"></div>
+
+
+<div class="row m-3 shadow ">
+    {%for product in products %}
+      
+        <div class="col-md-2 col-sm-5 shadow boxs m-3 me-2 animate__animated  animatediv animbox bag" style="height: 300px;">
+        <img  src="/static/images/{{product.prod_image}}" style="width: 300px; height: 150px;" class="img-fluid" id="prodimg"  onclick="document.location.href='/home/proddeets/{{product.prod_id}}/'"  >
+        <p id="prodname" class="roboto-condensed-uniquifier">{{product.prod_name}}</p>
+        <p id="prodprice"> ₦{{product.prod_price}}</p>
+   
+        <form action="{{url_for('bpuser.addcart')}}" method="post">
+          <input type="hidden" name="csrf_token" value="{{csrf_token()}}" id="">
+          <input type="hidden" name="product_id" value="{{product.prod_id}}">
+        <button type="submit" class="btn btn-warning shadow " ><i class="fa-solid fa-cart-plus"></i> Cart </button>
+        <input  type="number" name="quantity" value="1" min="1" max="{{product.prod_quantity}}">
+        
+      </form>
+      </div>
+      {%endfor%}
+</div>
+   
+   
+
+
+
+    {% include "user/footerlogged.html" %}

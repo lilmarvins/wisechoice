@@ -1,0 +1,55 @@
+{% include "user/headerlogged.html" %}
+
+<!-- end of nav 2 -->
+</div>
+<div class="row  m-3 d-flex justify-content-center" style="height: 100px;"></div>
+
+
+
+
+<div class="row  m-3 " style="min-height: 600px;">
+
+    {%include 'user/settingsside.html'%}
+ 
+           
+    <div class="col-7 shadow text-center device">
+        <h1 class="wise"><i class="fa-solid fa-store fa-flip"></i> Orders</h1><br>
+       
+       {%for orders in order%}
+        <div class="d-flex">
+        <div class="col-4 shadow boxs m-3 animate__animated bag  animatediv animbox" style="height: 200px;">
+            <img src="/static/images/{{orders.prod_deets.prod_image}}" style=" height: 150px;" class="img-fluid">
+        </div>
+          
+          <div class="col-5 p-5 pull  ">
+    
+          <span>{{orders.prod_deets.prod_name}}</span>
+            <p> ₦{{orders.prod_deets.prod_price}} <button class="btn btn-warning ">{{orders.order_items_deets.status}}</button></p> 
+        </div>
+        </div>
+        {%endfor%}
+
+
+
+
+
+
+
+
+
+
+
+          
+
+        </div>
+       
+        
+    </div>
+</div>
+
+
+{% include "user/footerlogged.html" %}
+
+ <!-- Initialize Swiper -->
+</body>
+</html>

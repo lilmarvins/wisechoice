@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('bpuser.static',filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('bpuser.static', filename='animate.min.css')}}">
+    <link href="{{url_for('bpuser.static',filename='bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="[Figtree](https://fonts.google.com/specimen/Figtree)">
+    <link rel="icon" type="image/png" sizes="32x32" href="/home/static/images/favicon-32x32.png">
+    <title>Login</title>
+    <style>
+    
+      
+        
+        .form2{
+            margin-top: 20px;
+            margin-bottom: 30px;
+            height: 500px;
+            background-color: white;
+            border-radius: 20px;
+            box-sizing: border-box;
+            box-shadow: 5px 5px 1px 6px rgba(0,0,0,0.7) ;
+        }
+        .form3{
+            margin-top: 20px;
+            margin-bottom: 30px;
+            height: 700px;
+            background-color: white;
+            border-radius: 20px;
+            box-sizing: border-box;
+            box-shadow: 5px 5px 1px 6px rgba(0,0,0,0.7) ;
+        }
+        
+        h2{
+            font-family: figtree;
+            font-size: 49px;
+        }
+        .logbtn{
+            border: 1px solid black;
+            padding: 10px 60px;
+            cursor: pointer;
+           
+        }
+      
+        #welcome{
+
+            position: fixed;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+           
+            padding: 10px 20px;
+           
+            border-radius: 00 10px rgba(0,0,0,0.5);
+        }
+        img{
+            width: 80px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container-fluid  form1">
+        
+            
+        <div class="row  " id="welcome">
+            <div class="col text-center animate__animated animate__shakeY  animate__infinite	infinite animate__slow	2s">
+                <img src="/home/static/images/trolley.png" alt="picture of a trolley" class="rounded-fluid">
+                <h1>Welcome To Wise Choice Mall</h1> 
+                <h3>Login Here</h3>
+                <p>we deliver the best and at a fast space</p>
+            </div>
+        </div>
+                                
+                <form action="{{url_for('bpuser.login')}}" method="post"  >
+                    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+                    <!-- login page -->
+
+                  <div id="logpg">
+
+                    <div class="row d-flex  justify-content-center ">
+                    <div class="col-md-4 form2 ">
+
+
+                        {% set m = get_flashed_messages(with_categories=True)%}
+                        {% for cat,msg in m%}
+                          {% if cat=='error'%}
+                          <div class="alert alert-danger">{{msg}}</div>
+                          {%else%}
+                          <div class="alert alert-success">{{msg}}</div>
+                          {%endif%}
+                        {%endfor%}
+
+
+                    <H2 class="text-center">Login </H2>
+                    <div class="text-center logbtn1">
+           <span class="logbtn loginswitch">login</span> <span class="logbtn signswitch">sign up</span>
+       </div>       
+
+
+
+
+
+                    <label for="email" class="mt-4">Enter Your Email</label>
+                    <input type="email" name="email" id=""  class="form-control mb-4 animate__animated animate__bounceInRight  animate__slow	2s" required placeholder="Enter Your Email">
+                    <label for="pwd" class="">Enter Your Password</label>
+                    <input type="password" name="pwd" id="" class="form-control  mb-4 animate__animated animate__bounceInRight " required placeholder="Enter Your password">
+                       <div class="d-flex  justify-content-center">
+                        <button type="submit" class="btn btn-warning col-10 align-center btncheck "  value="post">login</button>
+
+                    </div>
+                    <a href="" class="text-decoration-none text-danger">forgotten password?</a>
+
+                                    
+                                </div>
+                    </div>
+                </div>
+            </form>
+                        <!-- end of login page -->
+                        
+                        <!-- signup page -->
+<form action="{{url_for('bpuser.register')}}" method="post">
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+
+                        <div id="signpg">
+                            <div class="row d-flex  justify-content-center ">
+                            <div class="col-md-5 form3 ">
+                            <H2 class="text-center">Sign Up </H2>
+                            <div class="text-center ">
+                   <span class="logbtn loginswitch">login</span> <span class="logbtn signswitch">sign up</span>
+               </div>
+                            <label for="username" class="mt-4">Enter Your Fullname</label>
+                            <input type="text" name="username" id="" class="form-control mb-4 animate__animated animate__bounceInRight " required placeholder="Enter Your Fullname">
+                           
+
+                         
+                        <br>
+                            <label for="emailsign" class="">Enter Your Email</label>
+                            <input type="email" name="emailsign" id="" class="form-control animatediv animate__animated animate__bounceInRight mb-4 " required placeholder="Enter Your Email">
+                            <label for="Passwordsign" class="">Enter Your Password</label>
+                            <input type="password" name="Passwordsign" id="pass" class="form-control animate__animated animate__bounceInRight  mb-4 animate__slow	3s" required placeholder="Enter Your password">
+                          
+                            <br>
+                            <label for="Confirmpassword" >Confirm Password</label>
+                            <input type="password" name="Confirmpassword" id="confirm" class="form-control animate__animated animate__bounceInRight  mb-4 animate__slow	2s" required placeholder="Confirm password">
+                                <p id="para" class="text-danger"></p>
+                            <input type="radio" name="gender" id="" >
+                            <label for="male" class="mb-4">Male</label>
+                            <input type="radio" name="gender" id="" >
+                            <label for="female" class="mb-4">Female</label>
+<br><br>
+                                <input type="checkbox" name="terms" id="acceptcheckbox" class="animate__animated animate__bounceInRight">
+                                <label for="terms" class="mb-4">i Agree to the <a href="terms.html" class="text-decoration-none animate__animated animate__bounceInRight"  > terms and condition </a></label>
+                               <div class="d-flex  justify-content-center">
+                                <button type="submit" class="btn btn-warning col-10 align-center animate__animated animate__bounceInRight btncheck" disabled id="submitbutton" value="post">sign in</button>
+                            </div>
+                            
+        
+                                           
+                            </div>
+                        </div>
+                    </form>
+                        <!-- end of sign up page -->
+
+
+
+               
+            
+        </div>
+   
+    
+
+
+
+<script src="{{url_for('bpuser.static',filename='jquery.js')}}"></script>
+<script src="{{url_for('bpuser.static',filename='script.js')}}"></script>
+</body>
+</html>

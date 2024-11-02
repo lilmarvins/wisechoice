@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('bpadmin.static',filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('bpadmin.static', filename='animate.min.css')}}">
+    <link href="{{url_for('bpadmin.static',filename='bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="[Figtree](https://fonts.google.com/specimen/Figtree)">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <title>Login</title>
+    <style>
+    
+      
+        
+        .form2{
+            margin-top: 20px;
+            margin-bottom: 30px;
+            height: 500px;
+            background-color: white;
+            border-radius: 20px;
+            box-sizing: border-box;
+            box-shadow: 5px 5px 1px 6px rgba(0,0,0,0.7) ;
+        }
+        .form3{
+            margin-top: 20px;
+            margin-bottom: 30px;
+            height: 700px;
+            background-color: white;
+            border-radius: 20px;
+            box-sizing: border-box;
+            box-shadow: 5px 5px 1px 6px rgba(0,0,0,0.7) ;
+        }
+        
+        h2{
+            font-family: figtree;
+            font-size: 49px;
+        }
+        .logbtn{
+            border: 1px solid black;
+            padding: 10px 60px;
+            cursor: pointer;
+           
+        }
+      
+        #welcome{
+
+            position: fixed;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+           
+            padding: 10px 20px;
+           
+            border-radius: 00 10px rgba(0,0,0,0.5);
+        }
+        img{
+            width: 80px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container-fluid  form1">
+        
+            
+        <div class="row  " id="welcome">
+            <div class="col text-center animate__animated animate__shakeY  animate__infinite	infinite animate__slow	2s">
+                <img src="/admin/static/images/trolley.png" alt="picture of a trolley" class="rounded-fluid">
+                <h1>Welcome To Wise Choice Admin dashboard</h1> 
+                <h3>Login Here</h3>
+                
+            </div>
+        </div>
+                                
+                <form action="{{url_for('bpadmin.adminlogin')}}" method="post"  >
+                    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+                    <!-- login page -->
+
+                  <div id="logpg">
+
+                    <div class="row d-flex  justify-content-center ">
+                    <div class="col-md-4 form2 ">
+
+
+                        {% set m = get_flashed_messages(with_categories=True)%}
+                        {% for cat,msg in m%}
+                          {% if cat=='error'%}
+                          <div class="alert alert-danger">{{msg}}</div>
+                          {%else%}
+                          <div class="alert alert-success">{{msg}}</div>
+                          {%endif%}
+                        {%endfor%}
+
+
+                    <H2 class="text-center">Login </H2>
+                        
+
+
+
+
+
+                    <label for="adminemail" class="mt-4">Enter Your Email</label>
+                    <input type="email" name="adminemail" id=""  class="form-control mb-4 animate__animated animate__bounceInRight  animate__slow	2s" required placeholder="Enter Your Email">
+                    <label for="adminpwd" class="">Enter Your Password</label>
+                    <input type="password" name="adminpwd" id="" class="form-control  mb-4 animate__animated animate__bounceInRight " required placeholder="Enter Your password">
+                       <div class="d-flex  justify-content-center">
+                        <button type="submit" class="btn btn-warning col-10 align-center "  value="post">login</button>
+
+                    </div>
+                    <a href="" class="text-decoration-none text-danger">forgotten password?</a>
+
+                                    
+                                </div>
+                    </div>
+                </div>
+            </form>
+                        <!-- end of login page -->
+                        
+        <!-- end of sign up page -->
+
+
+
+               
+            
+        </div>
+   
+    
+
+
+
+<script src="{{url_for('bpadmin.static',filename='jquery.js')}}"></script>
+<script src="{{url_for('bpadmin.static',filename='script.js')}}"></script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+{% include "user/header.html" %}
+
+
+<div class="row animate__animated animate__bounceIn ">
+  <div class="col " style="height: 400px;">
+
+
+<!-- Swiper -->
+<div class="swiper swiper1 mySwiper">
+<div class="swiper-wrapper">
+  <div class="swiper-slide swiper-slide2">
+    <img src="{{url_for('bpuser.static',filename='images/fridgewise.jpg')}}" alt="">
+  </div>
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/shoewise.jpg" alt="">
+  </div>
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/bagwise.jpg" alt="">
+  </div>
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/ovenwise.jpg" alt="">
+  </div>
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/orange.jpg" alt="">
+  </div>
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/black.jpg" alt="">
+  </div>
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/buyfree.jpg" alt="">
+  </div>
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/shopbags.jpg" alt="">
+  </div>
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/cyber.jpg" alt="">
+  </div>
+</div>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-pagination"></div>
+</div>
+
+
+
+  </div>
+</div>
+
+
+<div class="row row-cols-3 m-3 shadow bg-warning animate__animated animate__bounceIn">
+  {%for product in products%}
+    
+      <div class="col-md-2 col-sm-5 shadow boxs m-3 me-2 animate__animated  animatediv animbox bag" style="height: 300px;">
+      <img  src="/static/images/{{product.prod_image}}" style="width: 300px; height: 150px;" class="img-fluid" id="prodimg" onclick="document.location.href='/home/proddeets/{{product.prod_id}}/'" >
+      <p id="prodname" class="roboto-condensed-uniquifier">{{product.prod_name}}</p>
+      <p id="prodprice"> ₦{{product.prod_price}}</p>
+      <form action="{{url_for('bpuser.addcart')}}" method="post">
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}" id="">
+        <input type="hidden" name="product_id" value="{{product.prod_id}}">
+      <button type="submit" class="btn btn-warning butcount addcart" ><i class="fa-solid fa-cart-plus "></i> cart </button>
+      <input  type="number" name="quantity" value="1" min="1" max="{{product.prod_quantity}}">
+  
+    </form>
+    </div>
+      
+ 
+  {%endfor%}
+  
+
+
+
+</div>
+<h2 class="text-center bg-warning text-white" style=" font-family: figtree;">special offers on wise choice</h2>
+<div class="row m-3 shadow">
+  <div class="col shadow boxs m-3 animate__animated animatediv animbox bag" style="height: 200px;">
+    <img src="/home/static/images/sale.png" alt="picture of sale" class="img-fluid" style="height:190px;">
+  </div>
+  <div class="col shadow boxs m-3 animate__animated animatediv animbox bag" style="height: 200px;">
+    <img src="/home/static/images/20perc.jpg" alt="20%pics" class="img-fluid" style="height:190px;">
+  </div>
+</div>
+
+
+<div class="row">
+  <!-- Swiper -->
+<div class="swiper slide-parent" >
+<div class="swiper-wrapper slide-wrapper" >
+  {%for product in products%}
+  <div class="swiper-slide slides">
+    <img  src="/static/images/{{product.prod_image}}" style="width: 300px; height: 150px;" class="img-fluid" id="prodimg" onclick="document.location.href='/home/proddeets/{{product.prod_id}}/'" >
+      <p id="prodname" class="roboto-condensed-uniquifier">{{product.prod_name}}</p>
+      <p id="prodprice"> ₦{{product.prod_price}}</p>
+      <form action="{{url_for('bpuser.addcart')}}" method="post">
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}" id="">
+        <input type="hidden" name="product_id" value="{{product.prod_id}}">
+      <button type="submit" class="btn btn-warning butcount addcart" ><i class="fa-solid fa-cart-plus "></i> cart </button>
+      <input  type="number" name="quantity" value="1" min="1" max="{{product.prod_quantity}}">
+  
+    </form>
+    </div>
+  {%endfor%}
+
+
+
+</div>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+</div>
+</div>
+</div>
+
+<!-- Button trigger modal -->
+
+
+
+
+
+
+<div class="row m-3  shadow ">
+  <div class="row row-cols-3">
+  {%for product in products%}
+  <div class="col-md-2  shadow boxs m-3 animate__animated bag  animatediv animbox" style="height: 300px;">
+    <img  src="/static/images/{{product.prod_image}}" style="width: 300px; height: 150px;" class="img-fluid" onclick="document.location.href='/home/proddeets/{{product.prod_id}}/'" >
+      <p id="prodname" class="roboto-condensed-uniquifier">{{product.prod_name}}</p>
+      <p id="prodprice"> ₦{{product.prod_price}}</p>
+      <form action="{{url_for('bpuser.addcart')}}" method="post">
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}" id="">
+        <input type="hidden" name="product_id" value="{{product.prod_id}}">
+      <button type="submit" class="btn btn-warning butcount addcart" ><i class="fa-solid fa-cart-plus "></i> cart </button>
+      <input  type="number" name="quantity" value="1" min="1" max="{{product.prod_quantity}}">
+  
+    </form>
+    </div>
+
+    {%endfor%}
+  </div>
+
+<h2 class="text-center bg-warning text-white" style=" font-family: figtree;">Low price offers on wise choice</h2>
+<div class="row m-3 shadow bg-warning">
+<div class="col-6">
+ <!-- Swiper -->
+<div class="swiper swiper1 mySwiper">
+<div class="swiper-wrapper">
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/supasale.jpg" alt="">
+  </div>
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/four.jpg" alt="">
+  </div>
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/techpic.jpg" alt="">
+  </div>
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/hotsale.jpg" alt="">
+  </div>
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/orange.jpg" alt="">
+  </div>
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/black.jpg" alt="">
+  </div>
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/buyfree.jpg" alt="">
+  </div>
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/mega.jpg" alt="">
+  </div>
+  <div class="swiper-slide swiper-slide2">
+    <img src="/home/static/images/cyber.jpg" alt="">
+  </div>
+</div>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-pagination"></div>
+</div>
+
+</div>
+<div class="col shadow boxs m-3 mb-5 animate__animated animatediv animbox bag" style="height: 450px;">
+<img src="/home/static/images/sale.png" alt="picture of sale" class="img-fluid" style="height:400px;">
+</div>
+</div>
+</div>
+
+<h2 class="text-center bg-warning text-white" style="font-family: figtree;">Shop From Our Collections</h2>
+
+<div class="row m-3 shadow row-cols-3">
+  {%for cats in cat%}
+<div class="col-md-3 m-5 shadow boxs  animate__animated  animatediv animbox bag" style="height: 300px;" id="category">
+<img src="/static/images/{{cats.cat_image}}" style=" height: 100%; " class="img-fluid" onclick="document.location.href='/home/catdeets/{{cats.cat_id}}/'">
+<p class="text-center">{{cats.cat_name}}</p>
+
+</div>
+
+
+{%endfor%}
+
+
+
+</div>
+
+
+
+<div class="col   m-3 " style="height: 60px;">
+
+
+</div>
+
+  {% include "user/footerlogged.html" %}
+
+
+ <!-- Initialize Swiper -->
+ <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+{% include "user/headerlogged.html" %}
+
+  <!-- end of nav 2 -->
+</div>
+<div class="row  m-3 d-flex justify-content-center" style="height: 100px;"></div>
+
+
+
+
+<div class="row  m-3 " style="min-height: 600px;">
+    {%include 'user/settingsside.html'%}
+ 
+           
+    <div class="col-8 shadow  rounded device">
+        <h1 class="wise text-center"><i class="fa-solid fa-gear fa-spin-pulse"></i> Account Management</h1><br>
+       
+        <div class="row">
+           <form action="" class="" style="margin-bottom: 250px;">
+                    <div class="col m-3 shadow " >
+                        
+                        <div class="accordion accordion-flush " id="accordionFlushExample" >
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="background-color: whitesmoke;">
+                                  Edit profile
+                                </button>
+                              </h2>
+                              
+                              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                               
+                                <div class="accordion-body"> 
+                                  
+                                  
+                                        <label for="inputFirstame" class="form-label">Firstname</label>
+                                        <input type="text" class="form-control" id="" value="{{userdets.username}}"> 
+                                        <label for="phone1" class="form-label">Phone Number </label>
+                                         <input type="tel" class="form-control" id="" value="{{userdets.phone_number}}">
+                                        <button type="submit" class="btn btn-warning">Save</button>
+  
+                                      
+                                </div>
+                          
+                              </div>
+                           
+                            </div>
+                           
+                            
+                          </div>
+                        
+                    </div>
+                  </form>
+                </div>
+                    <div class="col m-3 shadow">
+                         
+                        <div class="accordion accordion-flush " id="accordionFlushExampl" >
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOn" aria-expanded="false" aria-controls="flush-collapseOne" style="background-color: whitesmoke;">
+                                  Reset Password
+                                </button>
+                              </h2>
+                              
+                              <div id="flush-collapseOn" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExampl">
+                               
+                                <div class="accordion-body"> 
+                                    <label for="Password" class="form-label">Old Password</label>
+                                    <input type="password" name="password"  class="form-control" required placeholder="Enter Your password">
+                                    <label for="Confirmpassword"class="form-label" >New Password</label>
+                                    <input type="password" name="Confirmpassword"  class="form-control" required placeholder="Confirm password">
+                                        <button type="submit" class="btn btn-warning">Save</button>
+
+                                </div>
+                          
+                              </div>
+                           
+                            </div>
+                           
+                            
+                          </div>
+                    </div>
+                    
+                      
+                    
+
+                    
+              </div>
+        </div>
+
+
+        {% include "user/footerlogged.html" %}
+
+</body>
+</html>

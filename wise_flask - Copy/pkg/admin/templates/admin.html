@@ -1,0 +1,97 @@
+{% extends "admin_layout.html"%} {% block content%}
+<main>
+  <div class="container-fluid px-4">
+    <h1 class="mt-4">All Admins Accounts</h1>
+    <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+      <li class="breadcrumb-item active">User Accounts</li>
+    </ol>
+
+    <p>
+      
+      <button
+        class="btn btn-outline-warning"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseWidthExample"
+        aria-expanded="false"
+        aria-controls="collapseWidthExample"
+      >
+        Register An Admin
+      </button>
+    </p>
+    <div style="min-height: 120px">
+      <div class="collapse collapse-horizontal" id="collapseWidthExample">
+        <div class="card card-body" style="width: 500px">
+          <form action="/admin/createadmin/" method="post">
+            <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+            <input
+              type="text"
+              name="admin_name"
+              id=""
+              class="form-control mt-3"
+              placeholder="Admin Name"
+            />
+            <input
+              type="email"
+              name="admin_email"
+              id=""
+              class="form-control mt-3"
+              placeholder="Admin Email"
+            />
+            <input
+              type="password"
+              name="admin_pwd"
+              id=""
+              class="form-control mt-3"
+              placeholder="Admin Password"
+            />
+            <button type="submit" class="btn btn-primary mt-3">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-4">
+      <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Registered Accounts
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>S/N</th>
+              <th>Admin Name</th>
+              <th>Admin Email</th>
+              <th>Admin Created_on</th>
+              <th>Admin Last seen</th>
+              <th>Delete Admin</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for admin in admindets%}
+            <tr>
+              <td>{{loop.index}}</td>
+              <td>{{admin.admin_username}}</td>
+              <td>{{admin.admin_email}}</td>
+              <td>{{admin.admin_created_on}}</td>
+              <td>{{admin.admin_lastlogged}}</td>
+              <td>
+
+                <a
+                  href="/admin/deleteadmin/{{admin.admin_id}}"
+                  class="btn btn-danger"
+                  onclick="return confirm('Do you really want to delete this product')"
+                  >Delete User</a
+                >
+              </td>
+            </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock content%}

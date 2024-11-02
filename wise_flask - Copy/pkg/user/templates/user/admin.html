@@ -1,0 +1,35 @@
+{% include "headerlogged.html" %}
+
+
+<!-- end of nav 2 -->
+
+
+<div class="row justify-content-center d-flex">
+    <div class="col-10 shadow" style="height: 500px; ">
+
+    </div>
+</div>
+
+{% include "footerlogged.html" %}
+
+ <!-- Initialize Swiper -->
+ <script>
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+</body>
+</html>

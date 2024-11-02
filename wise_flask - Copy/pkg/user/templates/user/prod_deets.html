@@ -1,0 +1,62 @@
+
+
+{% if 'useronline' in session %}
+
+{% include "user/headerlogged.html" %}
+
+{%else%}
+{% include "user/header.html" %}
+{%endif%}
+<div class="container col-8 rounded">
+    <div class="row">
+        <div style="height: 100px;"></div>
+        {%for product in products%}
+            <div class="row" style="background-image:url('/static/images/{{product.prod_image}}'); height:500px; background-size:cover;">
+            </div>
+
+            <div class="row  alert alert-warning">
+                <div class="col">
+                   <h3> Product Name: {{product.prod_name}}</h3>
+                    
+                </div>
+                <div class="row border-top border-dark">
+                    <h6>Product Price: ₦ {{product.prod_price}}</h6>
+                    <h5>Contact Seller For further Information :{{product.seller_user.phone_number}}</h5>
+                    <div class="text-center">
+                        <form action="{{url_for('bpuser.addcart')}}" method="post">
+                            <input type="hidden" name="csrf_token" value="{{csrf_token()}}" id="">
+                            <input type="hidden" name="product_id" value="{{product.prod_id}}">
+                          <button type="submit" class="btn btn-warning shadow col-11" ><i class="fa-solid fa-cart-plus"></i> Cart </button>
+                     
+                          <input type="hidden" name="quantity" value="1" min="1" max="{{product.prod_quantity}}">
+                          
+                        </form>
+
+                    </div>
+                    <br> <br><br>
+                </div>
+                <div class="row alert alert-warning border-dark">
+                    <h5 class="border-bottom border-dark"> Product Details</h5>
+                    <h6>Descriptions</h6>
+                    <p>{{product.prod_description}}</p>
+                </div>
+            </div>
+        {%endfor%}
+
+
+
+    
+       
+    </div>
+</div>
+
+
+
+{% include "user/footerlogged.html" %}
+
+
+
+
+<script>
+    
+</script>

@@ -1,0 +1,49 @@
+<div class="col-3 rounded shadow ms-5 me-3 increasewidth">
+<p><a class="nav-link mb-3  ordersettings deviceclick" href="{{url_for('bpuser.settings')}}"><i class="fa-solid fa-gear fa-spin-pulse"></i> Settings</a></p>
+<hr class="dropdown-divider text-dark">
+<p><a class="nav-link mb-3  ordersettings deviceclick" href="{{url_for('bpuser.my_products')}}"><i class="fa-solid fa-shop fa-flip"></i> My Products</a></p>
+<hr class="dropdown-divider text-dark">
+<p><a class="nav-link mb-3  ordersettings deviceclick" href="{{url_for('bpuser.orders')}}"><i class="fa-solid fa-store fa-flip"></i> Orders</a></p>
+<hr class="dropdown-divider text-dark">
+<p><a class="nav-link mb-3  ordersettings deviceclick" href=""><i class="fa-regular fa-heart fa-beat-fade"></i> Saved Items</a></p>
+<hr class="dropdown-divider text-dark">
+<p><a class="nav-link mb-3  ordersettings deviceclick" href="{{url_for('bpuser.notification')}}"><i class="fa-regular fa-bell fa-shake"></i> Notifications</a></p>
+<hr class="dropdown-divider text-dark ">
+<p><a class="nav-link mb-3  ordersettings deviceclick" href="{{url_for('bpuser.address')}}"><i class="fa-solid fa-location-dot"></i> Address book</a></p>
+<hr class="dropdown-divider text-dark">
+<p><a class="nav-link mb-3  ordersettings deviceclick" href="{{url_for('bpuser.management')}}">Acount management</a></p>
+<hr class="dropdown-divider text-dark">
+
+<form action="{{url_for('bpuser.close')}}" method="post">
+    <!-- Button trigger modal -->
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}" id="">
+
+<p class=" mb-3  ordersettings"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Close
+</p>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete Account</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>are you sure you want to close your Account</p>
+          <p>if you proceed you will loose access to this account permanently</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Exit</button>
+          <button type="submit" class="btn btn-danger">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+<hr class="dropdown-divider text-dark">
+<p><a class="nav-link mb-3  ordersettings" href="{{url_for('bpuser.subscription')}}">Subscriptions </a></p>
+</div>

@@ -1,0 +1,23 @@
+{% include "user/headerlogged.html" %}
+
+
+<div style="height: 120px;"></div>
+
+<div class="row">
+<div class="col-6 ">
+    <h1 class="wise"> Page Not Found Kindly Continue Shoping </h1>
+<form action="{{url_for('bpuser.home')}}">
+    <button class="btn btn-primary">Home</button>
+</form>
+
+</div>
+
+<div class="col ">
+    <img src="/home/static/images/error.jpg" alt="picture of shoppers" class="img-fluid">
+</div>
+
+</div>
+
+
+
+{%include 'user/footerlogged.html'%}

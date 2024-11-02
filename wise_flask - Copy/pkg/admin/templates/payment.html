@@ -1,0 +1,49 @@
+
+{% extends 'admin_layout.html'%}
+
+               
+               {% block content%}
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">All Payments</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Payments</li>
+                        </ol>
+                   
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                               Payment Details
+                            </div>
+                            <div class="card-body">
+                               <table class="table">
+  <thead>
+    <th>Payers Name</th>
+    <th> Amount Paid</th>
+    <th>Payment Status</th>
+    <th>Serial Number</th>
+    <th>Payment Date</th>
+    
+  </thead>
+  <tbody>
+
+    {% for payments in payment%}
+    <tr>
+        <td>{{payments.trans_user.username}}</td>
+        <td>{{payments.amount}}</td>
+      <td>{{payments.transaction_status}}</td>
+      <td>{{payments.serial_number}}</td>
+      <td>{{payments.transaction_date}}</td>
+      
+    </tr>
+{%endfor%}
+  </tbody>
+</table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                {% endblock content%}
+                
+               

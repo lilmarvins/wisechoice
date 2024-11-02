@@ -1,0 +1,38 @@
+{% extends 'admin_layout.html'%} {% block content%}
+<main>
+  <div class="container-fluid px-4">
+    <h1 class="mt-4">Add Category</h1>
+    <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item">Dashboard</li>
+      <li class="breadcrumb-item active"><a href="">All Categories</a></li>
+      <li class="breadcrumb-item active">Add Category</li>
+    </ol>
+    <div class="row">
+      <div class="col">
+        <form action="" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="csrf_token" value="{{csrf_token()}}" />
+          <label for="prod_cat" style="font-size: 30px; font-family: figtree"
+            >Add Category</label
+          >
+          <input type="file" name="catimg" id="" class="form-control" required>
+          {%for cats in cat%}
+          <input
+            type="text"
+            name="prod_cat"
+            id=""
+            placeholder="Category Name"
+            class="form-control"
+          required value="{{cats.cat_name}}"/>
+          {%endfor%}
+          <br />
+
+          <button type="submit" class="btn btn-primary col-10" id="addprodbtn">
+            Add Category
+          </button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</main>
+{% endblock content%}
