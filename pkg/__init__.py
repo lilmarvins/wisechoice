@@ -1,3 +1,4 @@
+from flask import url_for,redirect
 from flask import Flask
 from flask_wtf.csrf import CSRFProtect
 from flask_migrate import Migrate
@@ -24,9 +25,14 @@ def create_app():
 
 # register the blue print 
     app.register_blueprint(adminobj)
-    app.register_blueprint(userobj)
+    app.register_blueprint(userobj,url_prefix='/home/')
     app.register_blueprint(apiobj)
     app.register_blueprint(errorbp)
+
+
+    @app.route('/')
+    def index():
+        return redirect(url_for('bpuser.landingpage'))
 
 
     app.config.from_pyfile("config.py", silent=True)
